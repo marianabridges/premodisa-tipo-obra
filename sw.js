@@ -1,4 +1,4 @@
-const CACHE_NAME = "premodisa-tipo-obra-v1";
+const CACHE_NAME = "premodisa-tipo-obra-v2";
 const FILES = [
   "./",
   "./index.html",
@@ -6,6 +6,8 @@ const FILES = [
   "./app.js",
   "./manifest.webmanifest",
   "./icon.svg",
+  "./icon-192.png",
+  "./icon-512.png",
 ];
 
 self.addEventListener("install", (event) => {

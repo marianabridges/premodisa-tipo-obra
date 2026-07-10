@@ -26,6 +26,8 @@ const mainType = document.querySelector("#mainType");
 const mainReason = document.querySelector("#mainReason");
 const selectedCount = document.querySelector("#selectedCount");
 const verticalToggle = document.querySelector("#verticalToggle");
+const installButton = document.querySelector("#installButton");
+let pendingInstallPrompt = null;
 
 function analyze() {
   const marked = pieces.filter((piece) => selected.has(piece.id));
@@ -114,3 +116,23 @@ render();
 if ("serviceWorker" in navigator && window.location.protocol !== "file:") {
   navigator.serviceWorker.register("./sw.js");
 }
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  pendingInstallPrompt = event;
+  installButton.hidden = false;
+});
+
+installButton.addEventListener("click", async () => {
+  if (!pendingInstallPrompt) return;
+
+  pendingInstallPrompt.prompt();
+  await pendingInstallPrompt.userChoice;
+  pendingInstallPrompt = null;
+  installButton.hidden = true;
+});
+
+window.addEventListener("appinstalled", () => {
+  pendingInstallPrompt = null;
+  installButton.hidden = true;
+});
