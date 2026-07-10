@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#b3292f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Tipo de obra" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>Premodisa | Tipo de obra</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <p>Premodisa</p>
+          <h1>Tipo de obra</h1>
+        </div>
+        <button id="resetButton" type="button" title="Limpar seleção" aria-label="Limpar seleção">Limpar</button>
+      </header>
+
+      <section class="result">
+        <span id="selectedCount">0 peças marcadas</span>
+        <strong id="mainType">Tipo I</strong>
+        <small id="mainReason">Marque as peças que aparecem no projeto.</small>
+      </section>
+
+      <label class="vertical-check">
+        <input id="verticalToggle" type="checkbox" />
+        <span>Vários pavimentos / caixa de elevador</span>
+      </label>
+
+      <section class="pieces" aria-label="Peças da obra">
+        <div id="taskGrid" class="task-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Premodisa - Tipo de obra",
+  "short_name": "Tipo de obra",
+  "description": "Classificador simples de tipo de obra por peças marcadas.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f2eb",
+  "theme_color": "#b3292f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
